@@ -33,6 +33,7 @@ class CountVectorizer:
                 doc_words_counter_list[-1][word] += 1
 
         self._feature_names = list(corpus_words_counter.keys())
+        self._feature_counts = []
 
         # формируем терм-документную матрицу для корпуса
         for i, doc in enumerate(corpus):
@@ -40,7 +41,7 @@ class CountVectorizer:
             for j, word in enumerate(self._feature_names):
                 self._feature_counts[-1][j] = doc_words_counter_list[i][word]
 
-        return self._feature_counts.copy()
+        return self._feature_counts
 
 
 if __name__ == '__main__':
