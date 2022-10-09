@@ -1,0 +1,30 @@
+Команда для запуска тестирования:
+python -m doctest -v -o IGNORE_EXCEPTION_DETAIL morse.py
+
+Результат тестирования:
+
+Trying:
+    encode('SOS')
+Expecting:
+    '... --- ...'
+ok
+Trying:
+    encode('ABC')    # doctest: +NORMALIZE_WHITESPACE
+Expecting:
+    '.-   -... -.-.'
+ok
+Trying:
+    encode('SOS+')
+Expecting:
+    Traceback (most recent call last):
+    ...
+    KeyError: '+'
+ok
+2 items had no tests:
+    morse
+    morse.decode
+1 items passed all tests:
+   3 tests in morse.encode
+3 tests in 3 items.
+3 passed and 0 failed.
+Test passed.
